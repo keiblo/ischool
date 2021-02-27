@@ -1,28 +1,27 @@
-import React, {Fragment} from 'react'
-import {Navbar, Nav, NavDropdown} from 'react-bootstrap'
+import React from 'react'
+import {Navbar, Container, Nav, Button} from 'react-bootstrap'
 
 const Header = () => {
   return (
-    <Navbar bg='light' expand='lg'>
-      <Navbar.Brand href='#home'>React-Bootstrap</Navbar.Brand>
-      <Navbar.Toggle aria-controls='basic-navbar-nav' />
-      <Navbar.Collapse id='basic-navbar-nav'>
-        <Nav className='mr-auto'>
-          <Nav.Link href='#home'>Home</Nav.Link>
-          <Nav.Link href='#link'>Link</Nav.Link>
-          <NavDropdown title='Dropdown' id='basic-nav-dropdown'>
-            <NavDropdown.Item href='#action/3.1'>Action</NavDropdown.Item>
-            <NavDropdown.Item href='#action/3.2'>
-              Another action
-            </NavDropdown.Item>
-            <NavDropdown.Item href='#action/3.3'>Something</NavDropdown.Item>
-            <NavDropdown.Divider />
-            <NavDropdown.Item href='#action/3.4'>
-              Separated link
-            </NavDropdown.Item>
-          </NavDropdown>
-        </Nav>
-      </Navbar.Collapse>
+    <Navbar bg='light' expand='lg' collapseOnSelect>
+      <Container>
+        <Navbar.Brand href='/'>Insta School</Navbar.Brand>
+        <Navbar.Toggle aria-controls='basic-navbar-nav' />
+        <Navbar.Collapse id='basic-navbar-nav'>
+          <Nav className='mr-auto'>
+            <Nav.Link href='/introduction'>コース紹介</Nav.Link>
+            <Nav.Link href='/materials'> レッスン教材</Nav.Link>
+            <Nav.Link href='/reviews'>受講生の声</Nav.Link>
+            <Nav.Link href='/contact'>お問い合わせ</Nav.Link>
+          </Nav>
+          <Nav className='ml-auto'>
+            <Button href='/cart' className='btn-rounded'>
+              申し込み
+            </Button>
+            <Nav.Link href='/login'>ログイン</Nav.Link>
+          </Nav>
+        </Navbar.Collapse>
+      </Container>
     </Navbar>
   )
 }

@@ -5,7 +5,9 @@ const Footer = () => {
   return (
     <Container>
       <Row>
-        <Col className='text-center py-3'>Designed by Kei Blokhin</Col>
+        <Col className='text-center py-3'>
+          Made with &#10084;　in Okayama &copy; InstaSchool{' '}
+        </Col>
       </Row>
     </Container>
   )
