@@ -1,6 +1,7 @@
 import React from 'react'
 import {Container, Button, Image, Col, Row} from 'react-bootstrap'
 import jumboImg from '../assets/img/jumboImg.jpg'
+import Courses from '../components/Courses'
 
 const HomeScreen = () => {
   return (
@@ -22,6 +23,8 @@ const HomeScreen = () => {
           </Col>
         </Row>
       </Container>
+
+      <Courses />
     </div>
   )
 }

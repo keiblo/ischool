@@ -1,24 +1,39 @@
 import React from 'react'
+import {LinkContainer} from 'react-router-bootstrap'
 import {Navbar, Container, Nav, Button} from 'react-bootstrap'
 
 const Header = () => {
   return (
     <Navbar bg='light' expand='lg' collapseOnSelect>
       <Container>
-        <Navbar.Brand href='/'>Insta School</Navbar.Brand>
+        <LinkContainer to='/'>
+          <Navbar.Brand>Insta School</Navbar.Brand>
+        </LinkContainer>
+
         <Navbar.Toggle aria-controls='basic-navbar-nav' />
         <Navbar.Collapse id='basic-navbar-nav'>
           <Nav className='mr-auto'>
-            <Nav.Link href='/introduction'>コース紹介</Nav.Link>
-            <Nav.Link href='/materials'> レッスン教材</Nav.Link>
-            <Nav.Link href='/reviews'>受講生の声</Nav.Link>
-            <Nav.Link href='/contact'>お問い合わせ</Nav.Link>
+            <LinkContainer to='/introduction'>
+              <Nav.Link>コース紹介</Nav.Link>
+            </LinkContainer>
+            <LinkContainer to='/reviews'>
+              <Nav.Link>受講生の声</Nav.Link>
+            </LinkContainer>
+            <LinkContainer to='/contact'>
+              <Nav.Link>お問い合わせ</Nav.Link>
+            </LinkContainer>
           </Nav>
           <Nav className='ml-auto'>
-            <Button href='/cart' className='btn-rounded'>
-              申し込み
-            </Button>
-            <Nav.Link href='/login'>ログイン</Nav.Link>
+            <LinkContainer to='/cart'>
+              <Button className='btn-rounded' type='button'>
+                <i class='fas fa-hashtag'></i>申し込み
+              </Button>
+            </LinkContainer>
+            <LinkContainer to='/login'>
+              <Nav.Link>
+                <i className='fas fa-user'></i>ログイン
+              </Nav.Link>
+            </LinkContainer>
           </Nav>
         </Navbar.Collapse>
       </Container>
