@@ -1,11 +1,22 @@
-import React, {Fragment} from 'react'
+import React, {Fragment, useState, useEffect} from 'react'
 import {Link} from 'react-router-dom'
 import {Row, Col, Image, ListGroup, Card, Button} from 'react-bootstrap'
 import Rating from '../components/Rating'
-import courses from '../courses'
+import axios from '../axios'
 
 const CourseDetailsScreen = ({match}) => {
-  const course = courses.find((c) => c.id === match.params.id)
+  const [course, setCourse] = useState({})
+
+  useEffect(() => {
+    const fetchCourse = async () => {
+      const {data} = await axios.get(`/api/courses/${match.params.id}`)
+
+      setCourse(data)
+    }
+
+    fetchCourse()
+  }, [match])
+
   return (
     <Fragment>
       <Link className='btn btn-dark my-3' to='/'>
