@@ -6,17 +6,18 @@ import Course from '../models/courseModel.js'
 //@description Fetch all courses
 //@route /api/courses
 //@access Fetch all courses
-app.get(
+router.get(
   '/',
   asyncHandler(async (req, res) => {
     const courses = await Course.find({})
+    res.json(courses)
   })
 )
 
 //@description Fetch single courses
 //@route /api/courses/:id
 //@access Fetch all courses
-app.get(
+router.get(
   '/:id',
   asyncHandler(async (req, res) => {
     const course = await Course.findById(req.params.id)
@@ -27,8 +28,6 @@ app.get(
       res.status(404)
       throw new Error('Course not found')
     }
-
-    res.json(courses)
   })
 )
 

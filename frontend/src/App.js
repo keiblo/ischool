@@ -7,6 +7,7 @@ import ContactScreen from './screens/ContactScreen'
 import ReviewsScreen from './screens/ReviewsScreen'
 import IntroductionScreen from './screens/IntroductionScreen'
 import CourseDetailsScreen from './screens/CourseDetailsScreen'
+import CartScreen from './screens/CartScreen'
 
 const App = () => {
   return (
@@ -16,6 +17,7 @@ const App = () => {
         <Route path='/' component={HomeScreen} exact />
         <Route path='/course/:id' component={CourseDetailsScreen} />
         <Route path='/contact' component={ContactScreen} />
+        <Route path='/cart/:id?' component={CartScreen} />
         <Route path='/reviews' component={ReviewsScreen} />
         <Route path='/introduction' component={IntroductionScreen} />
         <Footer />

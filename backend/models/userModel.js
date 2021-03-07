@@ -15,6 +15,24 @@ const userSchema = mongoose.Schema(
       type: String,
       required: true,
     },
+
+    shippingAddress: {
+      type: String,
+      required: function () {
+        return firstItemBought
+      },
+    },
+    phoneNumber: {
+      type: String,
+      required: function () {
+        return firstItemBought
+      },
+    },
+    firstItemBought: {
+      type: Boolean,
+      def: false,
+    },
+
     isAdmin: {
       type: Boolean,
       required: true,
@@ -25,6 +43,12 @@ const userSchema = mongoose.Schema(
     timestamps: true,
   }
 )
+
+userSchema.methods.setFirstItemBought = function () {
+  if (!this.firstItemBought) {
+    this.firstItemBought = true
+  }
+}
 
 const User = mongoose.model('User', userSchema)
 
