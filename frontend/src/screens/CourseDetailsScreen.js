@@ -9,7 +9,7 @@ import axios from 'axios'
 import {listCourseDetails} from '../actions/courseActions'
 
 const CourseDetailsScreen = ({history, match}) => {
-  const [questionsQty, setQestionsQty] = useState(1)
+  const [questionQty, setQuestionQty] = useState(1)
   const dispatch = useDispatch()
 
   const courseDetails = useSelector((state) => state.courseDetails)
@@ -19,7 +19,7 @@ const CourseDetailsScreen = ({history, match}) => {
   }, [dispatch, match])
 
   const addToCartHandler = () => {
-    history.push(`/cart/${match.params.id}?questionsQty=${questionsQty}`)
+    history.push(`/cart/${match.params.id}?questionsQty=${questionQty}`)
   }
 
   return (
@@ -78,8 +78,8 @@ const CourseDetailsScreen = ({history, match}) => {
                       <Col>
                         <Form.Control
                           as='select'
-                          value={questionsQty}
-                          onChange={(e) => setQestionsQty(e.target.value)}
+                          value={questionQty}
+                          onChange={(e) => setQuestionQty(e.target.value)}
                         >
                           {[...Array(course.countInStock).keys()].map((x) => (
                             <option key={x + 1} value={x + 1}>

@@ -26,7 +26,7 @@ const Header = () => {
           <Nav className='ml-auto'>
             <LinkContainer to='/cart'>
               <Button className='btn-rounded' type='button'>
-                <i class='fas fa-hashtag'></i>申し込み
+                <i className='fas fa-hashtag'></i>申し込み
               </Button>
             </LinkContainer>
             <LinkContainer to='/login'>
