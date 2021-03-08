@@ -4,6 +4,10 @@ import {Card} from 'react-bootstrap'
 import Rating from './Rating'
 
 const Course = ({course}) => {
+  
+
+
+
   return (
     <Card className='my-3 p-3 rounded'>
       <Link to={`course/${course._id}`}>
